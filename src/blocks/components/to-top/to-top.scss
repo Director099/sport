@@ -1,0 +1,36 @@
+// В этом файле должны быть стили для БЭМ-блока to-top, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, $media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+$transition-time:             0.3s !default;
+
+.to-top {
+
+  $block-name:                &; // #{$block-name}__element
+
+  @include text-small;
+  position: absolute;
+  right: 32px;
+  top: 23px;
+  color: $color-primary;
+  font-weight: 500;
+  text-decoration: none;
+  text-align: center;
+  transition: opacity $transition-time;
+
+  &::before {
+    content: url("data:image/svg+xml,%3Csvg width='14' height='18' viewBox='0 0 14 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M13.5 7.66232L12.0858 9.07062L7.793 4.79526L7.79289 17.9121L5.79289 17.9121L5.793 4.79526L1.5 9.07062L0.0857884 7.66232L6.79289 0.983276L13.5 7.66232Z' fill='%233d81c6'/%3E%3C/svg%3E%0A");
+    display: block;
+    margin-bottom: -3px;
+  }
+
+  .js & {
+    opacity: 0;
+    visibility: hidden;
+
+    &--visible {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}

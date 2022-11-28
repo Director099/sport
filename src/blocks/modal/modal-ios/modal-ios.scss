@@ -1,0 +1,13 @@
+.modal-ios {
+  background-color: transparent !important;
+
+  .modal__dialog {
+    @media (min-width: $screen-xl) {
+      width: 486px;
+    }
+  }
+
+  .modal__xl-close {
+    display: none !important;
+  }
+}

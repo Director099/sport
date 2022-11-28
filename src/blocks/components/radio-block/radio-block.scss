@@ -1,0 +1,51 @@
+.radio-block {
+  display: block;
+  cursor: pointer;
+}
+
+.radio-block__wrap {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  background-color: $color-lighten;
+  border-radius: 50px;
+  border: 2px solid $white;
+}
+
+.radio-block__icon {
+  display: inline-block;
+  width: 40px !important;
+  height: 40px;
+  object-fit: contain;
+  margin-right: 10px;
+}
+
+.radio-block__input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+
+  &:checked + .radio-block__wrap {
+    border: 2px solid $color-primary;
+  }
+}
+
+.radio-block--time {
+  display: inline-block;
+  .radio-block__wrap {
+    padding: 10px 20px;
+  }
+}
+
+.radio-block__add-text {
+  @include text-thin();
+  font-weight: 700;
+  display: block;
+}

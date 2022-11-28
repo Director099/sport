@@ -1,0 +1,33 @@
+mixin preview-tag(tag)
+  if(tag === 'a')
+    a.preview(href="news.html")&attributes(attributes)
+      block
+  if(tag === 'div')
+    .preview&attributes(attributes)
+      block
+mixin preview({search, picture, title, tag})
+  +preview-tag(tag)&attributes(attributes)
+    article.preview__row
+      .preview__img
+        img(src=`img/content/news-${picture}.jpg` alt="Повседневная практика показывает важность событий")
+      .preview__wrap
+        if(!search)
+          span.preview__info.preview__info--rubric.d-none.d-xl-block Название рубрики
+        if(search == true)
+          ul.preview__bread-list
+            li.preview__bread-item
+              a.preview__bread-link(href="index.html") Главная
+            li.preview__bread-item
+              a.preview__bread-link(href="products.html") Продукция
+            li.preview__bread-item
+              a.preview__bread-link(href="products-item-1.html") ГОСТ
+            li.preview__bread-item
+              a.preview__bread-link() Фторкаучуковые кольца
+
+        h3.preview__title= title
+        .preview__desc
+          p С другой стороны новая модель организационной деятельности представляет собой интересный эксперимент проверки новых предложений. Идейные соображения высшего порядка, а также сложившаяся структура организации играет важную роль в форм...
+        if(!search)
+          .preview__info-row
+            span.preview__info 12 января 2021
+            span.preview__info.d-xl-none Название рубрики

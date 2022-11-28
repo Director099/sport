@@ -1,0 +1,36 @@
+//- Все примеси в этом файле должны начинаться c имени блока (modal)
+
+mixin modal(id, header)
+
+  //- Принимает:
+  //-   id      {string} - идентификатор
+  //-   title   {string} - заголовок
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +modal('modal-demo-01', 'Заголовок', 'some')
+          .modal__body
+            p Текст
+          .modal__footer
+            button.btn(type='button', data-dismiss='modal') Закрыть
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' modal--' + modsList[i].trim();
+      }
+    }
+
+  .modal(id=id, class=allMods, tabindex='-1', role='dialog')&attributes(attributes)
+    a.icon-btn.modal__xl-close.d-none.d-xl-block(href='#' data-fancybox-close="")
+      svg(width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg")
+        path(d="M20.334 0.333313L22.691 2.69034L13.869 11.5116L22.691 20.3333L20.334 22.6903L11.5123 13.8683L2.69101 22.6903L0.333984 20.3333L9.15565 11.5116L0.333984 2.69034L2.69101 0.333313L11.5123 9.15498L20.334 0.333313Z" fill="#808080")
+
+    .modal__dialog(role='document')
+        .modal__content
+          if(!header)
+            .modal__header
+              +page-header({modalHeader: true}).d-xl-none
+          block

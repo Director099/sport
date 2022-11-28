@@ -1,0 +1,47 @@
+extends pug/layout.pug
+
+block meta
+  title Компания
+block header
+  +page-header({})
+block content
+  main
+    +navigation(
+      [
+        {
+          text: 'Главная', className: '',
+          attrs: {href: 'index.html',}
+        },
+        {
+          text: 'Компания', className: '',
+          attrs: {},
+        }
+      ]
+    )
+    +main-content({
+      title: 'О компании',
+      contentSlider: true,
+      contentFooter: true,
+      className: 'main-content__header--company',
+    })
+      .main-content__desc
+        p SporHUB.ru — это удобный интернет-сервис для желающих заниматься спортом. Мы стремимся обеспечить каждого, кто ценит своё время и комфорт, простым и быстрым доступом к спортивным занятиям.
+        p SporHUB объединил спортивные секции и площадки крупнейших городов России. Выбирайте любой спорт из множества существующих, и будь то футбол, хоккей или танцы, положите начало тренировкам в один клик.
+        p В мире ещё столько всего, что вы хотели бы попробовать. Начинайте.
+    //hr.line
+    //+excellence()
+    //hr.line
+    //+personals()
+    //hr.line
+    //+partner()
+    hr.line
+    +advantages('Как это работает?\n')
+    //hr.line
+    //+reviews({
+    //  title: 'Отзывы',
+    //  filter: true
+    //})
+    //hr.line
+    //+news()
+    hr.line
+    +contacts({})

@@ -1,0 +1,37 @@
+-
+  const listAdv = [
+    {
+      title: 'Привлечение клиентов на аренду площадки',
+      icon: 'https://barashev.com/image/service/Branding-Infographics-ico.png',
+      subtitle: ''
+    },
+    {
+      title: 'Повышение заполняемости групп',
+      icon: 'https://barashev.com/image/service/Dew-Infographics-ico.png',
+      subtitle: ''
+    },
+    {
+      title: 'Он-лайн бронирование и оплата с вашего сайта\n',
+      icon: 'https://barashev.com/image/service/Add-Branding-Infographics-ico.png',
+      subtitle: ''
+    },
+    {
+      title: 'Простая и удобная система управления расписанием',
+      icon: 'https://barashev.com/image/service/Support-Infographics-ico.png',
+      subtitle: ''
+    },
+  ];
+
+mixin list-production({title, videoTovar})
+  .section-content
+    +title-wrap(title)
+      a.link-all(href="#", data-text="Посмотреть все") Все
+    .section-content__wrap
+      .grid-row
+        each item in listAdv
+          .grid-row__col.grid-row__col--xl-6.section-content__item-block
+            +tovar({
+              title: item.title,
+              icon: item.icon,
+						})
+      //button(type="button").btn.btn--lighten.section-content__btn.section-content__btn--xl-tr.d-none.d-xl-block Показать еще

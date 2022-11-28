@@ -1,0 +1,215 @@
+extends pug/layout.pug
+
+block meta
+	title Фторкаучуковые кольца
+block header
+	+page-header({})
+block content
+	main
+		+navigation(
+      [
+        {
+          text: 'Главная', className: '',
+          attrs: {href: 'index.html',}
+        },
+        {
+          text: 'Продукция', className: '',
+          attrs: {href: 'products.html'},
+        },
+        {
+          text: 'ГОСТ', className: '',
+          attrs: {href: 'products-item-1.html'},
+        },
+        {
+          text: 'Фторкаучуковые кольца', className: '',
+          attrs: {href: ''},
+        }
+      ]
+		)
+		+main-content({
+      title: 'Фторкаучуковые кольца',
+      mainSlider: true,
+      contentFooter: true,
+      productSlider: true,
+      className: 'd-xl-none',
+      img: 'https://findsport.ru/userfiles/images/620x365/1524548270_d189125f1cd50ae78a5d1e1575d2de31.jpg'
+    }).main-content--p-current
+			.main-content__content
+				h2.title-big.main-content__title "Зенит-Уфа" Лесотехникум 56
+				.main-content__desc
+					p Разнообразный и богатый опыт дальнейшее развитие
+					p Описание поле
+					+price({})
+				//.main-content__btn
+				//	a.btn.btn--main(href="#modal-message-order" data-fancybox="") Обсудить проект
+				//	a.btn.btn--ios(href="#modal-message-order" data-fancybox="") Заказать
+		//-hr.line
+		//-+description(true, 'js-line-clamp')
+		hr.line
+		.section-content.booking
+			+title-wrap("Выбрать дату")
+				a.link-all(href="products.html", data-text="Посмотреть все") Все
+			.section-content__wrap
+				+form().js-form
+					.booking__calendar
+						.grid-row
+							.grid-row__col.grid-row__col--xl-6.section-content__item-block
+								.booking__calendar-date
+									h2.title-normal.booking__calendar-title Окрябрь 2022
+									ul.tab-filter
+										li.tab-filter__item
+											a.tab-filter__btn(data-btn-filter="29" data-date="2022-11-29") 29 субб
+										li.tab-filter__item
+											a.tab-filter__btn(data-btn-filter="30" data-date="2022-11-30") 30 Вс
+								.booking__calendar-date
+									h2.title-normal.booking__calendar-title Ноябрь 2022
+									ul.tab-filter
+										li.tab-filter__item
+											a.tab-filter__btn(data-btn-filter="1" data-date="2022-11-1") 1 Вт
+										li.tab-filter__item
+											a.tab-filter__btn(data-btn-filter="8" data-date="2022-11-8") 8 Вт
+										li.tab-filter__item
+											a.tab-filter__btn(data-btn-filter="15" data-date="2022-11-15") 15 Вт
+								input#js-input-data(type="hidden")
+							.grid-row__col.grid-row__col--xl-6.section-content__item-block
+								.booking__calendar-time-group
+									h3.title-normal.booking__calendar-title Выберите время
+									.booking__calendar-time(data-filter="29" hidden="hidden")
+										+radio-block({
+											name: "select-time",
+											text: "8:00-9:30",
+											addText: '2000 Р.',
+                      attrs: {
+                        'data-required': 1
+                      }
+										}).radio-block--time
+										+radio-block({
+											name: "select-time",
+											text: "9:30-11:00",
+											addText: '2000 Р.',
+                      attrs: {
+                        'data-required': 1
+                      }
+										}).radio-block--time
+									.booking__calendar-time(data-filter="8" hidden="hidden")
+										+radio-block({
+                      name: "select-time",
+                      text: "9:30-11:00",
+                      addText: '2000 Р.',
+                      attrs: {
+                        'data-required': 1
+                      }
+                    }).radio-block--time
+									.booking__calendar-time(data-filter="30" hidden="hidden")
+										+radio-block({
+											name: "select-time",
+											text: "11:00-12:30",
+											addText: '2000 Р.',
+                      attrs: {
+                        'data-required': 1
+                      }
+										}).radio-block--time
+									.booking__calendar-time(data-filter="1" hidden="hidden")
+										+radio-block({
+											name: "select-time",
+											text: "12:30-14:00",
+											addText: '2000 Р.',
+                      attrs: {
+                        'data-required': 1
+                      }
+										}).radio-block--time
+									.booking__calendar-time(data-filter="15" hidden="hidden")
+										+radio-block({
+											name: "select-time",
+											text: "20:00-21:30",
+											addText: '3500 Р.',
+											attrs: {
+                        'data-required': 1
+                      }
+										}).radio-block--time
+										+radio-block({
+                      name: "select-time",
+                      text: "21:30-23:00",
+                      addText: '1500 Р.',
+											attrs: {
+                        'data-required': 1
+                      }
+                    }).radio-block--time
+					.block-form__group.booking__group
+						.form__group
+							+field-text({
+								title: 'Название компании *',
+								helpText: 'Заполните это поле',
+								mods: '',
+								val: '',
+								attrs: {
+									name: 'company',
+									'data-required': 1
+								}
+							}).js-field
+						.form__group
+							+field-text({
+								title: 'Электронная почта *',
+								helpText: 'Не верный формат email',
+								mods: '',
+								val: '',
+								attrs: {
+									name: 'mail',
+									'data-type': 'email',
+									'data-required': 1
+								}
+							}).js-field
+						.form__group
+							+field-text({
+								title: 'Телефон *',
+								helpText: 'Заполните это поле',
+								mods: '',
+								val: '',
+								attrs: {
+									name: 'phone',
+									type: 'tel',
+									'data-required': 1
+								}
+							}).js-field
+					button.btn.btn--main.block-form__btn.booking__btn Отправить
+					p.form__warning.block-form__mt.d-none Нажимая кнопку «Отправить» я даю свое #[a(href="#") согласие на обработку персональных данных]
+		hr.line
+		+characteristics('Характеристики', true, 'js-char-clamp')
+		hr.line
+		.section-content
+			+title-wrap("Карта")
+				a.link-all(href="products.html", data-text="Посмотреть все") Все
+			.section-content__wrap
+				iframe(src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d9210.180909770179!2d56.028904!3d54.7527999!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x43d939647b2fce01%3A0x5c6bb8e935793a7e!2z0JfQtdC90LjRgi3Qo9GE0LA!5e0!3m2!1sru!2sru!4v1666795637699!5m2!1sru!2sru"  allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade")
+		//-+reviews({
+		//-  title: 'Сертификаты соответствия'
+		//-})
+		//-hr.line
+		//-+write()
+		//-hr.line
+		//-+contacts({})
+		hr.line
+		+production({
+      title: 'Разновидности',
+      category: true
+    })
+		hr.line
+		+nav-list(
+      [
+        {
+          link: 'products.html', text: 'Продукция'
+        },
+        {
+          link: 'company.html', text: 'Компания'
+        },
+        {
+          link: 'all-news.html', text: 'Новости'
+        },
+        {
+          attrs: {href: '#modal-contact', 'data-fancybox': ''}, text: 'Контакты'
+        },
+      ]
+		).d-xl-none
+		//hr.line
+		//+block-form()
+

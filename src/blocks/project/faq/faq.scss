@@ -1,0 +1,13 @@
+.faq__content {
+  @media (max-width: $screen-xl) {
+    padding: 16px 16px 26px;
+  }
+}
+
+.faq__content-item {
+  margin-bottom: 8px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}

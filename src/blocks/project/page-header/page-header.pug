@@ -1,0 +1,31 @@
+mixin page-header({modalHeader})
+  header.page-header&attributes(attributes).page__header
+    .container
+      .page-header__xs-row.page-header__xs-row--burger-right
+        if(modalHeader !== true)
+          +burger('Меню').d-xl-none.page-header__burger
+        else
+          a.icon-btn(href='#' data-fancybox-close="")
+            svg(width='17' height='14')
+              use(href='img/symbols.svg#icon-back')
+        .grid-row.grid-row--xl-center
+          .grid-row__col.grid-row__col--xl-2_9
+            +logo('sporthub.html')
+                img(src='img/content/SportHUB.png', alt='Логотип')
+          .grid-row__col.grid-row__col--xl-9_1
+            .page-header__row.d-none.d-xl-flex
+              +form.page-header__search
+                +field-text({
+                  mods: '',
+                  val: '',
+                  attrs: {
+                    name: 'search',
+                    placeholder: 'Поиск'
+                  }
+                }).field-text--search.js-field
+                  button.field-text__reset(type="reset" aria-label="Сброс")
+              +phone
+        if(modalHeader === true)
+          a.icon-btn(href='#' data-fancybox-close="")
+            svg(width='14' height='14')
+              use(href='img/symbols.svg#icon-close')

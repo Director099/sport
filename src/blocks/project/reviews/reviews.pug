@@ -1,0 +1,60 @@
+mixin reviews({filter, title, video, tplSlider})
+  .section-content.reviews
+    +title-wrap(title)
+    .section-content__wrap.default-slider
+      if(filter)
+        ul.tab-filter
+          li.tab-filter__item
+            a.tab-filter__btn.active(data-btn-filter="all") Все
+          li.tab-filter__item
+            a.tab-filter__btn(data-btn-filter="letter") Письма
+          li.tab-filter__item
+            a.tab-filter__btn(data-btn-filter="video") Видео
+      .default-slider
+        .swiper-container(class=`${tplSlider ? 'js-auto-slider' : 'section-content__grid-review'}`)
+          .swiper-wrapper
+            .swiper-slide.default-slider__width(data-filter="letter")
+              a.rev-img(href=`${video ? "#": 'img/content/review-1.jpg'}` data-fancybox=video && false)
+                if (video)
+                  video(src="https://img.artlebedev.ru/everything/thunder/morda/cover.mp4"  playsinline=""  autoplay="" muted loop)
+                else
+                  img(src="img/content/review-1.jpg" alt="Резинотехнические изделия")
+                .rev-img__info
+                  p.rev-img__desc Описание
+            .swiper-slide.default-slider__width(data-filter="letter")
+              a.rev-img(href=`${video ? "#": 'img/content/review-1.jpg'}` data-fancybox=video && false)
+                if (video)
+                  video(src="https://img.artlebedev.ru/everything/thunder/morda/cover.mp4"  playsinline=""  autoplay="" muted loop)
+                else
+                  img(src="img/content/review-1.jpg" alt="Резинотехнические изделия")
+                .rev-img__info
+                  p.rev-img__desc Описание
+            .swiper-slide.default-slider__width(data-filter="letter")
+              a.rev-img(href=`${video ? "#": 'img/content/review-1.jpg'}` data-fancybox=video && false)
+                if (video)
+                  video(src="https://img.artlebedev.ru/everything/thunder/morda/cover.mp4"  playsinline=""  autoplay="" muted loop)
+                else
+                  img(src="img/content/review-1.jpg" alt="data-fancyboxРезинотехнические изделия")
+                .rev-img__info
+                  p.rev-img__desc Описание
+            .swiper-slide.default-slider__width(data-filter="video")
+              a.rev-img(href=`${video ? "#": 'img/content/review-1.jpg'}` data-fancybox=video && false)
+                if (video)
+                  video(src="https://img.artlebedev.ru/everything/thunder/morda/cover.mp4"  playsinline=""  autoplay="" muted loop)
+                else
+                  img(src="img/content/review-1.jpg" alt="Резинотехнические изделия")
+                .rev-img__info
+                  p.rev-img__desc Описание
+            .swiper-slide.default-slider__width(data-filter="video")
+              a.rev-img(href=`${video ? "#": 'img/content/review-1.jpg'}` data-fancybox=video && false)
+                if (video)
+                  video(src="https://img.artlebedev.ru/everything/thunder/morda/cover.mp4"  playsinline=""  autoplay="" muted loop)
+                else
+                  img(src="img/content/review-1.jpg" alt="Резинотехнические изделия")
+                .rev-img__info
+                  p.rev-img__desc Описание
+        if (tplSlider)
+          .swiper-button-next
+          .swiper-button-prev
+        else
+          button(type="button").btn.btn--lighten.section-content__btn.section-content__btn--xl-tr Показать еще

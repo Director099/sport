@@ -1,0 +1,139 @@
+// В этом файле должны быть стили для БЭМ-блока btn, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+$gray-lighter:                hsl(0, 0%, 80%) !default;
+$gray-lightest:               hsl(0, 0%, 90%) !default;
+$text-color:                  hsl(0, 0%, 10%) !default;
+$line-height:                 1.5 !default;
+
+$field-padding-vertical:      13.5px !default;
+$field-padding-horizontal:    14px !default;
+
+.btn {
+
+  $block-name:                &; // #{$block-name}__element
+
+  box-sizing: border-box;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0;
+  padding: $field-padding-vertical  $field-padding-horizontal;
+  white-space: nowrap;
+  user-select: none;
+  text-align: center;
+  font-size: 17px;
+  line-height: 21px;
+  font-weight: 500;
+  font-family: inherit;
+  text-decoration: none;
+  text-transform: none;
+  color: $text-color;
+  border-radius: $border-radius;
+  border: 1px solid $gray-lighter;
+  background-color: $gray-lightest;
+  background-image: none;
+  cursor: pointer;
+  letter-spacing: 0.3px;
+
+  &:hover,
+  &:focus {
+    //text-decoration: none;
+    //color: $text-color;
+    //background-color: darken($gray-lightest, 10%);
+    //border-color: darken($gray-lighter, 12%);
+  }
+
+  //&:visited {
+  //  color: $text-color;
+  //}
+
+  //&:active,
+  //&:focus {
+  //  @include field-focus;
+  //}
+
+  &--disabled,
+  &:disabled {
+    opacity: $opacity;
+    cursor: not-allowed;
+    color: $text-color;
+    background-color: $gray-lightest;
+    border-color: $gray-lighter;
+
+    @at-root a.btn--disabled {
+      pointer-events: none;
+    }
+  }
+
+
+//   &--disabled,
+//   &:disabled {
+//     color: #fff;
+//     background-color: $color-main;
+//     border-color: $color-main;
+//   }
+
+  // &__icon {
+  //   display: inline-block;
+  //   vertical-align: middle;
+  // }
+
+
+
+   &--main {
+     color: $white;
+     background-color: $color-primary;
+     box-shadow: 0px 1px 0px rgba(27, 31, 35, 0.04), inset 0px 2px 0px rgba(255, 255, 255, 0.25);
+     //border: 1px solid $color-primary;
+     border: 1px solid #EAECEE;
+
+     @media (min-width: $screen-xl) {
+       font-weight: 500;
+     }
+
+     &:hover {
+       color: $white;
+       background: #2F74BA;
+     }
+
+     &:focus {
+       border: 1px solid #8D8D8D;
+       box-shadow: 0px 1px 0px rgba(27, 31, 35, 0.04), inset 0px 2px 0px rgba(255, 255, 255, 0.25);
+     }
+   }
+
+  &--main-b {
+    color: $color-primary;
+    border-color: $color-primary;
+  }
+
+  &--lighten {
+    background-color: $color-lighten;
+    border-color: $color-lighten;
+    color: #808080;
+  }
+
+  &--s-middle {
+    padding: 5.5px 17.5px;
+  }
+
+  &--ios {
+    color: $color-primary;
+    background: #fafbfc;
+    border: 1px solid #eaecee;
+
+    &:hover {
+      background-color: #F4F4F8;
+    }
+  }
+
+  @media (min-width: $screen-xl) {
+    font-size: 14px;
+    line-height: 20px;
+
+    padding-top: 9px;
+    padding-bottom: 9px;
+    letter-spacing: 0.15px;
+  }
+}

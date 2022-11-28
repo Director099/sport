@@ -1,0 +1,19 @@
+mixin product-tag(tag)
+	if(tag === 'a')
+		a.product(href="catalog.html")
+			block
+	else
+		.product
+			block
+
+mixin product({category, tag})
+	+product-tag(tag)
+		a.product__img(href="products-current.html" style="display: block")
+			img(src="img/content/main-title.jpg" alt="Фторсиликоновые кольца любой сл...")
+		.product__content
+			h3.product__title "Зенит-Уфа" Лесотехникум 56
+			if(category)
+				.product__wrap
+					+price({}).price--b-none.product__price
+					a.product__link.product__link--dotted(href="#modal-more" data-fancybox="") Характеристики
+					a.btn.btn--s-middle.btn--main-b.product__btn(href="products-current.html" data-address='"Зенит-Уфа" Лесотехникум 56') Арендовать зал

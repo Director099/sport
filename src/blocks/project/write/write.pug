@@ -1,0 +1,10 @@
+mixin write()
+  .section-content.write
+    +title-wrap('Напишите нам 💬')
+      a.link-all(href="#", data-text="Посмотреть все") Все
+    .section-content__wrap.write__content
+      +comment({
+        username: 'Иван Барашев',
+        avatarURL: 'img/content/user-1.jpg',
+        content: '<p>Здравствуйте! Остались вопросы? Давайте  обсудим их прямо сейчас! 🔥🔥</p>',
+      })

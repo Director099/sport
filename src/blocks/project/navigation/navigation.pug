@@ -1,0 +1,6 @@
+mixin navigation(list)
+  nav.navigation.swipe-list.d-xl-none&attributes(attributes)
+    +tags-list({
+      list: list,
+      tagLinkTag: 'a'
+    })

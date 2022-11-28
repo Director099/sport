@@ -1,0 +1,10 @@
+.production-all {
+  @media (min-width: $screen-xl) {
+    background-color: transparent;
+    padding: 0;
+  }
+}
+
+.production-all .section-content__wrap {
+  padding: 0;
+}

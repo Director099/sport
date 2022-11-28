@@ -1,0 +1,27 @@
+.excellence {
+  text-align: center;
+}
+
+.excellence__title {
+  @include text-semi-big();
+  font-size: 25px;
+  font-weight: 600;
+  //display: block;
+
+  @media (min-width: $screen-xl) {
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 35px;
+  }
+}
+
+.excellence__text {
+  @include text-small();
+  margin-bottom: 0;
+  color: #808080;
+
+  @media (min-width: $screen-xl) {
+    @include xl-text-small;
+    line-height: 17px;
+  }
+}

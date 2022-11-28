@@ -1,0 +1,32 @@
+mixin characteristics(title, more, jsLineClamp)
+	.section-content
+		+title-wrap(title)
+		.section-content__wrap.section-content__wrap--description
+			.table-char
+				ul.table-char__list(class= jsLineClamp)
+					li.table-char__item
+						span Зал
+						span Крытый
+					li.table-char__item
+						span Площадь
+						span 36 × 18 × 10,5
+					li.table-char__item
+						span Покрытие
+						span Искуственный газон
+					li.table-char__item
+						span Душевая
+						span Есть
+					li.table-char__item
+						span Раздевалки
+						span Есть
+					li.table-char__item
+						span Трибуны
+						span Есть
+					li.table-char__item
+						span Инвентарь
+						span Нет
+					li.table-char__item
+						span Освещение
+						span Есть
+				if(more)
+					+link('Подробнее ›').js-desc-toggle.section-content__link-more

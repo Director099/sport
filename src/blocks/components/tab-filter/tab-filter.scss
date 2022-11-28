@@ -1,0 +1,48 @@
+.tab-filter {
+  @include ul-none;
+  display: flex;
+  flex-wrap: wrap;
+  grid-row-gap: 8px;
+  margin-bottom: 14px;
+
+  @media (max-width: $screen-xl - 1) {
+    margin-left: -16px;
+    margin-right: -16px;
+    padding-left: 16px;
+    padding-right: 16px;
+    overflow: auto;
+    flex-wrap: nowrap;
+  }
+
+  &--news {
+    margin-bottom: 0;
+  }
+}
+
+.tab-filter__item {
+  margin-right: 8px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.tab-filter__btn {
+  display: block;
+  @include xl-text-thin();
+  font-weight: 500;
+  padding: 4px 12px;
+  border: 0.33px solid #B0B6D2;
+  border-radius: 100px;
+  letter-spacing: 0.2px;
+  color: #808080;
+  transition: $time;
+  text-decoration: none;
+  cursor: pointer;
+  white-space: nowrap;
+
+  &.active {
+    border-color: $color-primary;
+    color: $color-primary;
+  }
+}

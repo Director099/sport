@@ -1,0 +1,103 @@
+.collapse {
+  transition: $time;
+
+  &.active {
+    //background-color: transparent;
+
+    .collapse__title::after {
+      transform: rotate(-0deg);
+    }
+
+    .nav-list__link::after {
+      transform: rotate(45deg);
+    }
+  }
+}
+
+.collapse--faq {
+  //padding: 13px 16px 13px 16px;
+  border-radius: $border-radius;
+  border: 1px solid $color-line-border;
+
+  &.active {
+    .collapse__title {
+      //margin-bottom: 14px;
+    }
+
+    .collapse__wrap {
+      border-top-color: $color-line-border;
+    }
+  }
+
+  @media (max-width: $screen-xl - 1) {
+    @include text-normal();
+  }
+
+  //@media (min-width: $screen-xl) {
+  //  background-color: #f5f5f6;
+  //}
+}
+
+.collapse__title {
+  @include xl-text-normal;
+  position: relative;
+  font-weight: 500;
+  margin: 0;
+  cursor: pointer;
+  transition: $time;
+  background-color: $color-light;
+  padding: 14px 46px 16px 16px;
+
+  &::after {
+    display: block;
+    content: '';
+    position: absolute;
+    right: 16px;
+    top: 19px;
+    width: 14px;
+    height: 14px;
+    opacity: 0.2;
+    background-image: url("data:image/svg+xml,%3Csvg width='14' height='10' viewBox='0 0 14 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M13 8.3457L7 2.3457L1 8.3457' stroke='%23212A40' stroke-width='2'/%3E%3C/svg%3E%0A");
+    background-position: center;
+    background-repeat: no-repeat;
+    transform-origin: center center;
+    transform: rotate(-180deg);
+
+    transition: $time;
+  }
+
+  @media (max-width: $screen-xl - 1) {
+    @include text-normal();
+  }
+}
+
+.collapse__wrap {
+  height: 0px;
+  overflow: hidden;
+
+  background-color: transparent;
+  //margin-left: -16px;
+  //margin-right: -16px;
+  //padding-left: 16px;
+  //padding-right: 16px;
+  transition: $time;
+}
+
+.collapse__content {
+  opacity: 0.6;
+  padding: 14px 16px 16px;
+
+  //margin-top: 14px;
+  transition: $time;
+
+  @media (min-width: $screen-xl) {
+    max-width: 686px;
+    opacity:  1;
+  }
+}
+
+.collapse__content p {
+  &:last-child {
+    margin-bottom: 0;
+  }
+}

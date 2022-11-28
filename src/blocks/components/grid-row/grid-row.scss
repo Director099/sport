@@ -1,0 +1,184 @@
+.grid {
+  display: grid;
+  grid-gap: 32px;
+  grid-template-columns: repeat(auto-fill, minmax(125px,1fr));
+
+  @media (min-width: $screen-xl) {
+    grid-gap: 36px;
+    grid-template-columns: repeat(4, calc(25% - 27px));
+  }
+}
+
+.grid-row {
+  @include row(16px, 16px, 16px, 16px, 16px);
+
+  &--i-12 {
+    @include row(12px, 12px, 12px, 12px, 12px);
+    gap: 12px 0;
+
+    .grid-row__col {
+      padding-left: 6px;
+      padding-right: 6px;
+    }
+  }
+
+  &--sb {
+    justify-content: space-between;
+  }
+
+  &--mb32 {
+    @media (max-width: $screen-xl - 1) {
+      .grid-row__col:nth-child(n+4) {
+        margin-top: 32px;
+      }
+    }
+
+    @media (min-width: $screen-xl) {
+      .grid-row__col:nth-child(n+5) {
+        margin-top: 32px;
+      }
+    }
+  }
+
+  @media (max-width: $screen-xl - 1) {
+    &--xs-ident-none {
+      margin-left: 0;
+      margin-right: 0;
+
+      > .grid-row__col {
+        padding-left: 0;
+        padding-right: 0;
+      }
+    }
+  }
+
+  @media (min-width: $screen-xl) {
+    &--xl-reverce {
+      flex-direction: row-reverse;
+    }
+
+    &--xl-center {
+      align-items: center;
+    }
+
+    &--xl-mb40 .grid-row__col {
+      margin-bottom: 40px;
+    }
+
+    &__xl-ml-a {
+      margin-left: auto;
+    }
+  }
+}
+
+.grid-row--i-12 + .section-content__btn {
+  @media (max-width: $screen-xl - 1) {
+    margin-top: 12px;
+  }
+}
+
+.grid-row__col {
+  @include make-col(12, 12, 16px);
+  //margin-bottom: 16px;
+  &--auto {
+    flex-basis: auto;
+  }
+
+  &--ratio-a4-h {
+    aspect-ratio: 169 / 118;
+  }
+
+  &--ratio-a4-v {
+    aspect-ratio: 422 / 583;
+  }
+
+  &--ratio-16-9 {
+    aspect-ratio: 422 / 724;
+  }
+
+  &--ratio-9-16 {
+    aspect-ratio: 845 / 469;
+  }
+
+  &--ratio-1 {
+    aspect-ratio: 1;
+  }
+
+  &--12 {
+    @include make-col(12, 12, 16px);
+  }
+
+  &--6 {
+    @include make-col(6, 12, 16px);
+  }
+
+  &--4 {
+    @include make-col(4, 12, 16px);
+  }
+
+  &--xl-3 {
+    @include col(xl, 3, 12, 16px);
+  }
+
+  &--xl-6 {
+    @include col(xl, 6, 12, 16px);
+  }
+
+  &--xl-2_9 {
+    @include col(xl, 2.9, 12, 16px);
+  }
+
+  &--xl-9_1 {
+    @include col(xl, 9.1, 12, 16px);
+  }
+
+  &--xl-auto {
+    @media (min-width: $screen-xl) {
+      flex-basis: auto;
+    }
+  }
+}
+
+.grid-row-xl {
+  @media (min-width: $screen-xl) {
+    display: grid;
+    grid-gap: 12px;
+    grid-template-columns: repeat(auto-fill, calc(20% - 9.6px));
+
+    .section-content__item {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.grid-tpl {
+  display: grid;
+  grid-gap: 12px;
+  grid-template-columns: repeat(auto-fill, minmax(185px, 1fr));
+
+
+  &--2 {
+    grid-template-columns: repeat(auto-fill, minmax(288px, 1fr));
+    @media (min-width: $screen-xl) {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  &--3 {
+    grid-template-columns: repeat(auto-fill, minmax(288px, 1fr));
+    @media (min-width: $screen-xl) {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+
+  &--4 {
+    //grid-template-columns: repeat(auto-fill, minmax(288px, 1fr));
+    @media (min-width: $screen-xl) {
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+  }
+
+  &--ai-s {
+    align-items: flex-start;
+  }
+}

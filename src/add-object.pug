@@ -1,0 +1,52 @@
+extends pug/layout.pug
+
+block meta
+	title Главная
+block header
+	+page-header({})
+block content
+	main
+		+navigation(
+      [
+        {
+          text: 'Компания', className: '',
+          attrs: {href: 'company.html',}
+        },
+        {
+          text: 'Контакты', className: '',
+          attrs: {href: '#modal-contact', 'data-fancybox': ''}
+        }
+      ]
+		)
+		+main-content({
+      mainSlider: true,
+      contentFooter: true,
+      className: 'd-xl-none'
+    })
+			.main-content__content-wrap.main-content__content-wrap--xl-row
+				.main-content__content
+					h1.title-big.main-content__title Занимайтесь спортом
+					.main-content__desc
+						p Sporthub - онлайн сервис по бронированию спортивных залов города!
+		hr.line
+		+list-production({
+      title: 'Возможности для клубов'
+    })
+		hr.line
+		+faq()
+		hr.line
+		+contacts({})
+		hr.line
+		+nav-list(
+      [
+        {
+          link: 'company.html', text: 'Компания'
+        },
+        {
+          attrs: {href: '#modal-contact', 'data-fancybox': ''}, text: 'Контакты'
+        },
+      ]
+		).d-xl-none
+		hr.line
+		+block-form()
+

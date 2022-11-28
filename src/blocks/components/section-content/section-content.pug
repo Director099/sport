@@ -1,0 +1,6 @@
+mixin section-content({title})
+  .section-content&attributes(attributes)
+    if(title)
+      +title-wrap(title)
+    .section-content__wrap
+      block

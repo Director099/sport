@@ -1,0 +1,59 @@
+mixin block-form()
+  .section-content.block-form
+    +form().js-form
+      +title-wrap('Зарегистрируйте свою площадку у нас 👇').d-xl-none
+      .block-form__content
+        .d-none.d-xl-block
+          h2.title-normal.block-form__title Зарегистрируйте свою площадку у нас
+        p.form__text Это быстро и просто. Или позвонив по номеру #[a(href="#") +7 917 567-67-67]
+        .block-form__group
+          .form__group
+            +field-text({
+              title: 'Название компании *',
+              helpText: 'Заполните это поле',
+              mods: '',
+              val: '',
+              attrs: {
+                name: 'company',
+                'data-required': 1
+              }
+            }).js-field
+          .form__group
+            +field-text({
+              title: 'Электронная почта *',
+              helpText: 'Не верный формат email',
+              mods: '',
+              val: '',
+              attrs: {
+                name: 'mail',
+                'data-type': 'email',
+                'data-required': 1
+              }
+            }).js-field
+          .form__group
+            +field-text({
+              title: 'Телефон *',
+              helpText: 'Заполните это поле',
+              mods: '',
+              val: '',
+              attrs: {
+                name: 'phone',
+                type: 'tel',
+                'data-required': 1
+              }
+            }).js-field
+        .block-form__row
+          +field-file({
+            mods: '',
+            attrs: {
+              name: 'commentFile',
+              multiple: true,
+            },
+            text: {
+              selectText: 'Выберите файл(ы)',
+              nothingText: 'Прикрепить файл',
+              flesSelectedText: 'Выбрано файлов:',
+            },
+          }).block-form__field-file
+          button.btn.btn--main.block-form__btn Отправить
+        p.form__warning.block-form__mt.d-none Нажимая кнопку «Отправить» я даю свое #[a(href="#") согласие на обработку персональных данных]

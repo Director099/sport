@@ -1,0 +1,12 @@
+mixin tovar({title, icon, video})
+  a.tovar(href="#")
+    .tovar__content
+      //span.tovar__category Название категории
+      section.tovar__wrap-content
+        h3.tovar__title= title
+        span.tovar__commet Комментарий
+    .tovar__img
+      if(video === true)
+        video(src="https://img.artlebedev.ru/everything/thunder/morda/cover.mp4"  playsinline=""  autoplay="" muted loop)
+      else
+        img(src=icon alt="Фторкаучуковые кольца")

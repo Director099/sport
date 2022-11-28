@@ -1,0 +1,93 @@
+@mixin mask-photo($mask) {
+  content: '';
+  position: absolute;
+  left: -1px;
+  top: -1px;
+  bottom: -1px;
+  right: -1px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: $mask;
+}
+
+@mixin hover-shadow {
+  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.05), 0px 3px 1px rgba(0, 0, 0, 0.03);
+  transform: scale(1.01);
+}
+
+@mixin field-focus {
+  outline: 0;
+  // box-shadow: 0 0 0 2px rgba($color-main, $opacity);
+}
+
+@mixin ul-none() {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+@mixin line-clamp($line) {
+  display: -webkit-box;
+  -webkit-line-clamp: $line;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+@mixin text-gradient($gradient-color, $color) {
+  display: inline-block;
+  color: $color;
+  background-image: $gradient-color;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@mixin text-thin() {
+  font-size: 11px;
+  line-height: 15px;
+}
+
+@mixin text-small() {
+  font-size: 13px;
+  line-height: 17px;
+}
+
+@mixin text-normal() {
+  font-size: 15px;
+  line-height: 20px;
+}
+
+@mixin text-big() {
+  font-size: 17px;
+  line-height: 22px;
+}
+
+@mixin text-semi-big() {
+  font-size: 21px;
+  line-height: 25px;
+}
+
+@mixin xl-text-thin() {
+  font-size: 13px;
+  line-height: 18px;
+}
+
+@mixin xl-text-small() {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+@mixin xl-text-normal() {
+  font-size: 16px;
+  line-height: 22px;
+}
+
+@mixin xl-text-big() {
+  font-size: 18px;
+  line-height: 25px;
+}
+
+@mixin xl-text-semi-big() {
+  font-size: 32px;
+  line-height: 35px;
+}

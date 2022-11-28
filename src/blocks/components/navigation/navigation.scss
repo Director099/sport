@@ -1,0 +1,17 @@
+.navigation {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.navigation__row {
+  display: flex;
+}
+
+.navigation__burger {
+  margin-right: 10px;
+}
+
+//TODO: Убираю линию, надо подумать как избавиться от тега hr
+.navigation + .line {
+  display: none;
+}

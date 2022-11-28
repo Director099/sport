@@ -1,0 +1,9 @@
+mixin radio-block({name, icon, text, attrs, addText})
+	label.radio-block&attributes(attributes)
+		input(type="radio" name=name)&attributes(attrs).radio-block__input
+		span.radio-block__wrap
+			if(icon)
+				img.radio-block__icon(src=icon, alt=name)
+			span.radio-block__text!= text
+				if(addText)
+					span.radio-block__add-text= addText
